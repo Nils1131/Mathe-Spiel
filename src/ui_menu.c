@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "game_logic.h"
 
 static void show_menu(void) {
     printf("\nHauptmen\303\274\n");
@@ -21,7 +22,7 @@ void ui_main_menu(void) {
         }
         switch (choice) {
             case 1:
-                printf("Spielen gew\303\244hlt.\n");
+                play_game();
                 break;
             case 2:
                 printf("Bestenliste wird angezeigt.\n");
