@@ -5,7 +5,7 @@ Diese Anleitung beschreibt, wie das Mathe-Spiel gespielt wird.
 ## Start des Spiels
 
 1. Stelle sicher, dass das Programm kompiliert ist. Führe dazu im Projektverzeichnis `make` aus.
-2. Starte anschließend das Programm mit `./bin/mathquiz`.
+2. Starte anschließend das Programm mit `./bin/mathquiz` (Linux/macOS) bzw. `bin\\mathquiz.exe` unter Windows.
 3. Es erscheint das Hauptmenü des Spiels.
 
 ## Eine Runde spielen
