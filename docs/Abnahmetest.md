@@ -17,7 +17,8 @@ make
 Nach erfolgreichem Build kann das Programm gestartet werden:
 
 ```bash
-./bin/mathquiz
+./bin/mathquiz        # unter Linux/macOS
+bin\\mathquiz.exe    # unter Windows
 ```
 
 Daraufhin erscheint das Hauptmenü des Spiels.
