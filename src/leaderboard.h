@@ -6,6 +6,12 @@
 #define LB_NAME_LEN 64
 #define LB_MAX_ENTRIES 100
 
+#ifdef _WIN32
+#define LB_DEFAULT_PATH "data\\leaderboard.csv"
+#else
+#define LB_DEFAULT_PATH "data/leaderboard.csv"
+#endif
+
 typedef struct {
     char name[LB_NAME_LEN];
     int score;

@@ -7,6 +7,18 @@
 static LBEntry entries[LB_MAX_ENTRIES];
 static size_t entry_count = 0;
 
+static FILE *open_file(const char *path, const char *mode) {
+#ifdef _WIN32
+    FILE *f = NULL;
+    if (fopen_s(&f, path, mode) != 0) {
+        return NULL;
+    }
+    return f;
+#else
+    return fopen(path, mode);
+#endif
+}
+
 static int cmp_entries(const void *a, const void *b) {
     const LBEntry *ea = (const LBEntry *)a;
     const LBEntry *eb = (const LBEntry *)b;
@@ -14,7 +26,10 @@ static int cmp_entries(const void *a, const void *b) {
 }
 
 int lb_load(const char *path) {
-    FILE *f = fopen(path, "r");
+    if (!path) {
+        path = LB_DEFAULT_PATH;
+    }
+    FILE *f = open_file(path, "r");
     if (!f) {
         return -1;
     }
@@ -41,7 +56,10 @@ int lb_load(const char *path) {
 }
 
 int lb_save(const char *path) {
-    FILE *f = fopen(path, "w");
+    if (!path) {
+        path = LB_DEFAULT_PATH;
+    }
+    FILE *f = open_file(path, "w");
     if (!f) {
         return -1;
     }
@@ -68,7 +86,10 @@ int lb_add(const char *name, int score) {
 
 int lb_reset(const char *path) {
     entry_count = 0;
-    FILE *f = fopen(path, "w");
+    if (!path) {
+        path = LB_DEFAULT_PATH;
+    }
+    FILE *f = open_file(path, "w");
     if (!f) {
         return -1;
     }
