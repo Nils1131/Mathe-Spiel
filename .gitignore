@@ -16,3 +16,6 @@ bin/
 
 # Editor files
 *~
+
+# Documentation output
+docs/html/
