@@ -1,0 +1,7 @@
+# Doxyfile for Mathe-Spiel
+PROJECT_NAME = "Mathe-Spiel"
+OUTPUT_DIRECTORY = docs/html
+INPUT = src
+RECURSIVE = YES
+GENERATE_HTML = YES
+GENERATE_LATEX = NO

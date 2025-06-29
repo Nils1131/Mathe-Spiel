@@ -1,5 +1,5 @@
 CC ?= gcc
-CFLAGS ?= -Wall -Wextra -std=c99
+CFLAGS ?= -Wall -Wextra -pedantic -std=c99
 
 SRC := $(wildcard src/*.c)
 BIN := bin/mathquiz
