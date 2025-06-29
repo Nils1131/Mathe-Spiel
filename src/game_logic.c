@@ -5,18 +5,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-void play_game(void) {
+int play_game(void) {
     size_t total = qb_count();
     if (total == 0) {
         printf("Keine Fragen verf\303\274gbar.\n");
-        return;
+        return 0;
     }
 
     size_t count = total < 10 ? total : 10;
     size_t *indices = malloc(total * sizeof(size_t));
     if (!indices) {
         printf("Speicherfehler.\n");
-        return;
+        return 0;
     }
 
     for (size_t i = 0; i < total; i++) {
@@ -58,5 +58,7 @@ void play_game(void) {
 
     free(indices);
     printf("\nSpiel beendet. Punkte: %d von %zu.\n", score, count);
+
+    return score;
 }
 
